@@ -144,6 +144,11 @@ body.dark-theme {
   gap: 1.5rem;
 }
 
+.flex{
+  display: flex;
+  gap: 1.5rem;
+}
+
 /*=============== PROFILE ===============*/
 .profile {
   position: relative;
