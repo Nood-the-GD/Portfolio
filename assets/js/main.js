@@ -18,6 +18,36 @@ tabs.forEach(tab =>{
     })
 })
 
+/*=============== PROJECT VIDEO MODAL ===============*/
+const videoModal = document.getElementById('video-modal')
+const videoPlayer = document.getElementById('video-modal__player')
+const videoButtons = document.querySelectorAll('[data-video]')
+const videoCloseEls = document.querySelectorAll('[data-close-video]')
+
+const openVideoModal = (src) => {
+    videoPlayer.setAttribute('src', src)
+    videoModal.classList.add('active-video')
+    videoPlayer.play()
+}
+
+const closeVideoModal = () => {
+    videoModal.classList.remove('active-video')
+    videoPlayer.pause()
+    videoPlayer.removeAttribute('src')
+    videoPlayer.load()
+}
+
+videoButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault()
+        openVideoModal(button.dataset.video)
+    })
+})
+
+videoCloseEls.forEach(el => {
+    el.addEventListener('click', closeVideoModal)
+})
+
 /*=============== DARK LIGHT THEME ===============*/
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'

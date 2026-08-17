@@ -372,6 +372,50 @@ body.dark-theme {
   bottom: 0;
 }
 
+/*=============== VIDEO MODAL ===============*/
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal.active-video {
+  display: flex;
+}
+
+.video-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, .8);
+}
+
+.video-modal__content {
+  position: relative;
+  width: min(90vw, 720px);
+  max-height: 90vh;
+}
+
+.video-modal__player {
+  width: 100%;
+  max-height: 90vh;
+  border-radius: .75rem;
+  background-color: #000;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
 /*=============== SKILLS ===============*/
 .skills__content {
   row-gap: 3.5rem;
